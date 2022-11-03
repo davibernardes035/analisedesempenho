@@ -41,6 +41,8 @@ int main(){
     double soma_tempo_servico = 0.0;
 
     unsigned long int fila = 0;
+    unsigned long int max_fila = 0;
+
     
     srand(time(NULL));
 
@@ -66,7 +68,7 @@ int main(){
 
         if(tempo_decorrido == chegada){
 
-            printf("Chegada em: %lF\n", tempo_decorrido);
+            // printf("Chegada em: %lF\n", tempo_decorrido);
             if(!fila){
 
                 servico = tempo_decorrido + (-1.0 / (1.0/tempo_medio_servico)) * log(aleatorio());
@@ -74,6 +76,7 @@ int main(){
 
             }
             fila++;
+            max_fila = fila > max_fila? fila : max_fila;
             chegada = tempo_decorrido + (-1.0 / (1.0/intervalo_medio_chegada)) * log(aleatorio());
 
         }else{ // saida
@@ -89,13 +92,17 @@ int main(){
 
             }
 
-            printf("Saida em: %lF\n", tempo_decorrido);
+            // printf("Saida em: %lF\n", tempo_decorrido);
 
         }   
 
     }
 
     printf("Ocupacao: %lF\n", soma_tempo_servico/maximo(tempo_decorrido, servico));
+    printf("Max_Fila: %ld\n", max_fila);
+    printf("Fila: %ld\n", fila);
+
+
 
     return 0;
 
