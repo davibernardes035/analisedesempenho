@@ -1,4 +1,4 @@
-# Projeto de um simulador feito na matéria de Ánalise de desempenho
+# Projeto de um simulador básico feito na matéria de Ánalise de Desempenho na faculdade
 
 ## tempo_simulacao // tempo total em segundos que o simulador executa
 
